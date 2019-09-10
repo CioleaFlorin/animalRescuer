@@ -1,13 +1,25 @@
 package org.fasttrackit;
 
 public class Food {
-    String name;
-    int price;
-    boolean inStoc;
+    private String name;
+    private int price;
+    private boolean inStoc;
 
     public Food(String name, boolean inStoc) {
         this.name = name;
 
+        this.inStoc = inStoc;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setInStoc(boolean inStoc) {
         this.inStoc = inStoc;
     }
 }

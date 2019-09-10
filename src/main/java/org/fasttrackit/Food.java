@@ -2,8 +2,12 @@ package org.fasttrackit;
 
 public class Food {
     String name;
-    double price;
+    int price;
     boolean inStoc;
 
+    public Food(String name, boolean inStoc) {
+        this.name = name;
 
+        this.inStoc = inStoc;
+    }
 }

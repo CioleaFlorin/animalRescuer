@@ -9,4 +9,10 @@ public class Animal {
     String favouriteFood;
     String favouriteActivity;
 
+    public Animal(String name, int healthLevel, int hungryLevel) {
+        this.name = name;
+        this.healthLevel = healthLevel;
+        this.hungryLevel = hungryLevel;
+
+    }
 }

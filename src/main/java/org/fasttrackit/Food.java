@@ -22,4 +22,16 @@ public class Food {
     public void setInStoc(boolean inStoc) {
         this.inStoc = inStoc;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public boolean isInStoc() {
+        return inStoc;
+    }
 }

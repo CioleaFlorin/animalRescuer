@@ -43,4 +43,32 @@ public class Animal {
     public void setFavouriteActivity(String favouriteActivity) {
         this.favouriteActivity = favouriteActivity;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public int getHealthLevel() {
+        return healthLevel;
+    }
+
+    public int getHungryLevel() {
+        return hungryLevel;
+    }
+
+    public int getJoyLevel() {
+        return joyLevel;
+    }
+
+    public String getFavouriteFood() {
+        return favouriteFood;
+    }
+
+    public String getFavouriteActivity() {
+        return favouriteActivity;
+    }
 }

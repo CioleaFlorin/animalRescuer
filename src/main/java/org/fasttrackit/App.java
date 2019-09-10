@@ -6,8 +6,8 @@ package org.fasttrackit;
  */
 public class App {
     public static void main(String[] args) {
-        Animal animal= new Animal("dog", 7,5);
-       //animal.name="dog";
+        Animal animal= new Animal("Rex", 7,5);
+       //animal.name="Rex";
        //animal.age=7;
        //animal.joyLevel=5;
        //animal.favouriteActivity="swimming";
@@ -29,7 +29,7 @@ public class App {
        //food.price=23;
        //food.inStoc=true;
 
-        Activity activity=new Activity("swimming");
+        Activity activity=new Activity("catch");
         //activity.name="swimming";
 
         Vet vet=new Vet("Frank");
@@ -44,7 +44,12 @@ public class App {
         //game.vet=vet;
         game.setAdopter(adopter);
 
+        adopter.feed(animal, food);
+        //System.out.println(animal.getHungryLevel());
 
+
+        adopter.play(animal,activity);
+        //System.out.println(animal.getJoyLevel());
 
 
 

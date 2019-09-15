@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.time.LocalDate;
+
 /**
  * Hello world!
  *
@@ -24,10 +26,13 @@ public class App {
         //adopter.cashAvailable=1000;
         adopter.setCashAvailable(1200);
 
-        Food food=new Food("Pedigree",  true);
+        LocalDate newExpirationDate=LocalDate.of(2023,5,6);
+        Food food=new Food("Pedigree", newExpirationDate, true );
        //food.name="Pedigree";
        //food.price=23;
        //food.inStoc=true;
+        food.setExpirationDate(newExpirationDate);
+        System.out.println(food.getExpirationDate());
 
         Activity activity=new Activity("catch");
         //activity.name="swimming";
@@ -44,11 +49,11 @@ public class App {
         //game.vet=vet;
         game.setAdopter(adopter);
 
-        adopter.feed(animal, food);
+        //adopter.feed(animal, food);
         //System.out.println(animal.getHungryLevel());
 
 
-        adopter.play(animal,activity);
+        //adopter.play(animal,activity);
         //System.out.println(animal.getJoyLevel());
 
 

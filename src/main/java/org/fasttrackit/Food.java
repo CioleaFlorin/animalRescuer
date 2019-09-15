@@ -1,14 +1,25 @@
 package org.fasttrackit;
 
+import java.time.LocalDate;
+
 public class Food {
     private String name;
     private int price;
+    private LocalDate expirationDate;
     private boolean inStoc;
 
-    public Food(String name, boolean inStoc) {
+    public Food(String name, LocalDate expirationDate, boolean inStoc) {
         this.name = name;
-
+        this.expirationDate = expirationDate;
         this.inStoc = inStoc;
+    }
+
+    public LocalDate getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(LocalDate expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
     public void setName(String name) {

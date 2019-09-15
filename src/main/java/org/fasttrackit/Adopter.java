@@ -27,6 +27,6 @@ public class Adopter {
 
     public void play(Animal animal, Activity activity){
         System.out.println(name + " is playing " + activity.getName() + " with " + animal.getName());
-        animal.setJoyLevel(animal.getJoyLevel()+1);
+        animal.setJoyLevel(animal.getJoyLevel()+3);
     }
 }

@@ -11,7 +11,7 @@ public class App {
         Animal animal= new Animal("Rex", 7,5);
        //animal.name="Rex";
        //animal.age=7;
-       //animal.joyLevel=5;
+
        //animal.favouriteActivity="swimming";
        //animal.favouriteFood="Pedigree";
        //animal.healthLevel=10;
@@ -31,8 +31,7 @@ public class App {
        //food.name="Pedigree";
        //food.price=23;
        //food.inStoc=true;
-        food.setExpirationDate(newExpirationDate);
-        System.out.println(food.getExpirationDate());
+        //System.out.println(food.getExpirationDate());
 
         Activity activity=new Activity("catch");
         //activity.name="swimming";
@@ -50,11 +49,18 @@ public class App {
         game.setAdopter(adopter);
 
         //adopter.feed(animal, food);
-        //System.out.println(animal.getHungryLevel());
-
+        //System.out.println("After feeding, " +  animal.getName()+ "'s hungry level is "  +animal.getHungryLevel());
 
         //adopter.play(animal,activity);
-        //System.out.println(animal.getJoyLevel());
+        //System.out.println("After playing, " +  animal.getName()+ "'s joy level is "  +animal.getJoyLevel());
+
+
+        animal.setJoyLevel(7);
+        animal.mood();
+
+        Dog dog= new Dog("Rex",9,3,"Canine","Bulldog");
+        dog.setJoyLevel(7);
+        dog.mood();
 
 
 

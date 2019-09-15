@@ -71,4 +71,13 @@ public class Animal {
     public String getFavouriteActivity() {
         return favouriteActivity;
     }
+
+
+
+    public void mood(){
+        if(joyLevel>4)
+            System.out.println(name+ " is happy");
+        else
+            System.out.println(name + " is sad");
+    }
 }

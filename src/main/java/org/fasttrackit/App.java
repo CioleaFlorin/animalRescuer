@@ -55,12 +55,25 @@ public class App {
         //System.out.println("After playing, " +  animal.getName()+ "'s joy level is "  +animal.getJoyLevel());
 
 
-        animal.setJoyLevel(7);
-        animal.mood();
-
-        Dog dog= new Dog("Rex",9,3,"Canine","Bulldog");
+        //animal.setJoyLevel(7);
+        //animal.mood();
+//
+        Animal dog= new Dog("Rex",9,3,"Canine","Bulldog");
         dog.setJoyLevel(7);
         dog.mood();
+
+        Mammal mammal=new Dog("Bruno", 10,5,"Canine","Pitbull");
+        mammal.setJoyLevel(2);
+        mammal.mood();
+
+        Animal mammal2=new Mammal("Hugo", 10,5,"Canine");
+        mammal2.mood();
+
+
+
+
+
+
 
 
 

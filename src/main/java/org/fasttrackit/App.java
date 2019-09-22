@@ -59,18 +59,19 @@ public class App {
         //animal.mood();
 //
         Animal dog= new Dog("Rex",9,3,"Canine","Bulldog");
-        dog.setJoyLevel(7);
-        dog.mood();
+        //dog.setJoyLevel(7);
+        //dog.mood();
+//
+        //Mammal mammal=new Dog("Bruno", 10,5,"Canine","Pitbull");
+        //mammal.setJoyLevel(2);
+        //mammal.mood();
+//
+        //Animal mammal2=new Mammal("Hugo", 10,5,"Canine");
+        //mammal2.mood();
 
-        Mammal mammal=new Dog("Bruno", 10,5,"Canine","Pitbull");
-        mammal.setJoyLevel(2);
-        mammal.mood();
 
-        Animal mammal2=new Mammal("Hugo", 10,5,"Canine");
-        mammal2.mood();
-
-
-
+        adopter.feed(dog,food);
+        adopter.play(dog,activity);
 
 
 

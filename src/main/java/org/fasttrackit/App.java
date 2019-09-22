@@ -12,13 +12,13 @@ public class App {
        //animal.name="Rex";
        //animal.age=7;
 
-       //animal.favouriteActivity="swimming";
-       //animal.favouriteFood="Pedigree";
+       animal.setFavouriteActivity("catch");
+       animal.setFavouriteFood("Pedigree");
        //animal.healthLevel=10;
        //animal.hungryLevel=2;
 
         animal.setAge(7);
-        animal.setFavouriteActivity("swimming");
+        //animal.setFavouriteActivity("swimming");
 
 
         Adopter adopter=new Adopter("John");
@@ -70,8 +70,8 @@ public class App {
         //mammal2.mood();
 
 
-        adopter.feed(dog,food);
-        adopter.play(dog,activity);
+        adopter.feed(animal,food);
+        adopter.play(animal,activity);
 
 
 

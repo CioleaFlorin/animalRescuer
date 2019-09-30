@@ -8,11 +8,11 @@ public class Food {
     private LocalDate expirationDate;
     private boolean inStoc;
 
-    public Food(String name, LocalDate expirationDate, boolean inStoc) {
-        this.name = name;
-        this.expirationDate = expirationDate;
-        this.inStoc = inStoc;
-    }
+   // public Food(String name, LocalDate expirationDate, boolean inStoc) {
+   //     this.name = name;
+   //     this.expirationDate = expirationDate;
+   //     this.inStoc = inStoc;
+   // }
 
     public LocalDate getExpirationDate() {
         return expirationDate;
@@ -45,4 +45,6 @@ public class Food {
     public boolean isInStoc() {
         return inStoc;
     }
+
+
 }

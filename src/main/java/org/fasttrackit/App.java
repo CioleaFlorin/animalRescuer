@@ -27,7 +27,7 @@ public class App {
         adopter.setCashAvailable(1200);
 
         LocalDate newExpirationDate=LocalDate.of(2023,5,6);
-        Food food=new Food("Pedigree", newExpirationDate, true );
+       // Food food=new Food("Pedigree", newExpirationDate, true );
        //food.name="Pedigree";
        //food.price=23;
        //food.inStoc=true;
@@ -70,10 +70,11 @@ public class App {
         //mammal2.mood();
 
 
-        adopter.feed(animal,food);
-        adopter.play(animal,activity);
+        //adopter.feed(animal,food);
+        //adopter.play(animal,activity);
 
 
+        game.start();
 
 
 

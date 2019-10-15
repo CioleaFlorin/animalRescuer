@@ -58,9 +58,9 @@ public class Game {
             }
             else
                 animal.mood();
-            animal.setJoyLevel((animal.getJoyLevel()-1));
-            animal.setHungryLevel((animal.getHungryLevel()+1));
             roundsNumber++;
+            animal.setHungryLevel(animal.getHungryLevel()+1);
+            animal.setJoyLevel(animal.getJoyLevel()-1);
             System.out.println();
         }
         if(animalIsOk==true)
@@ -105,11 +105,13 @@ public class Game {
             System.out.println(count+"."+food.getName());
             count++;
         }
+        System.out.println(count+".I don't want to feed "+ animal.getName()+" today.");
     }
 
     private void displayAcivities(){
         for(int i=0; i< availableActivity.length;i++)
             System.out.println((i+1)+ "." + availableActivity[i].getName());
+        System.out.println((availableActivity.length+1) +".I don t want to play with "+ animal.getName());
 
     }
 
@@ -144,40 +146,66 @@ public class Game {
 
     private void requireFeeding() {
 
-        System.out.println("Do you want to feed " + animal.getName() + " ?");
-        Scanner yesNo = new Scanner(System.in);
-        if (yesNo.next().equals("no") )
-            System.out.println(animal.getName() + " hungry level is " + animal.getHungryLevel());
-        else {
+
             System.out.println("What do you want to feed " + animal.getName() + " ?");
             displayFood();
-            Scanner scanner = new Scanner(System.in);
-            int foodNumber = scanner.nextInt();
-            adopter.feed(animal, availableFood.get(foodNumber-1));
+            int foodNumber = getActivityFromUser();
+            if(foodNumber==3)
+            {
+                animal.setHungryLevel(animal.getHungryLevel()+1);
+                System.out.println(animal.getName()+ " new hungry level is "+ animal.getHungryLevel());
+            }
+            else{
+                try {
+                    adopter.feed(animal, availableFood.get(foodNumber - 1));
+                }
+                catch (IndexOutOfBoundsException e){
+                    System.out.println("Choose a valid option, please!");
+                    requireFeeding();
+                }
+            }
         }
 
-    }
 
     private void requireActivity(){
-
-        System.out.println("Do you want to play with " + animal.getName() + " ?");
-        Scanner yesNo=new Scanner(System.in);
-        if(yesNo.next().equals("no")){
-            System.out.println(animal.getName() + "'s  joy level is " + animal.getJoyLevel());
+        System.out.println("What do you want to play with " + animal.getName()+ "?");
+        displayAcivities();
+        int activityNumber=getActivityFromUser();
+        if(activityNumber==3)
+        {
+            animal.setJoyLevel(animal.getJoyLevel()-1);
+            System.out.println(animal.getName()+ " new joy level is "+ animal.getJoyLevel());
         }
         else{
+            try {
+                adopter.play(animal, availableActivity[activityNumber - 1]);
+            }
+            catch (IndexOutOfBoundsException e){
+                System.out.println("Choose a valid option, please!");
+                requireActivity();
+            }
+        }
+    }
 
-        System.out.println("What do you want to play with " + animal.getName() + " ?");
-        displayAcivities();
 
+
+
+
+
+
+    private int getActivityFromUser(){
         Scanner scanner=new Scanner(System.in);
-        int activityNumber=scanner.nextInt();
+            try{
+                    return scanner.nextInt();
+            }
 
-        adopter.play(animal,availableActivity[activityNumber-1]);
+            catch (InputMismatchException | IndexOutOfBoundsException e){
 
+                System.out.println("Pick a valid number, please!");
+                return getActivityFromUser();
+        }
     }
 
-    }
+}
 
 
-    }

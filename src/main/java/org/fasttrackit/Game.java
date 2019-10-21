@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Game {
     private Adopter adopter;
@@ -38,8 +39,9 @@ public class Game {
 
         initAnimal();
         initAdopter();
-        nameAnimal();
-
+        String name;
+        name=nameAnimal();
+        animal.setName(name);
         boolean animalIsOk = true;
         int roundsNumber = 1;
         while (animalIsOk == true && roundsNumber <=7) {
@@ -125,23 +127,34 @@ public class Game {
 
     }
 
-    private void initAdopter(){
+    private String initAdopter(){
         System.out.println("Please enter your name.");
+        String name;
         Scanner scanner=new Scanner(System.in);
-        try{
-            adopter.setName(scanner.nextLine());
-        }
-        catch (InputMismatchException e){
-            System.out.println("You entered an invalid name.");
-            initAdopter();
+        name=scanner.nextLine();
+        if(Pattern.matches("[a-zA-z]+",name))
+            return name;
+        else{
+            System.out.println("Please enter a valid name!");
+            return initAdopter();
         }
 
     }
 
-    private void nameAnimal(){
+    private String nameAnimal(){
         System.out.println("Please enter your animal's name");
+        String name;
         Scanner scanner=new Scanner(System.in);
-        animal.setName(scanner.nextLine());
+        name=scanner.nextLine();
+        if(Pattern.matches("[a-zA-z]+",name))
+            return name;
+        else{
+            System.out.println("Please enter a valid name!");
+            return nameAnimal();
+        }
+
+
+
     }
 
     private void requireFeeding() {

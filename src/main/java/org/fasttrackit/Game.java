@@ -38,10 +38,13 @@ public class Game {
         //displayAcivities();
 
         initAnimal();
-        initAdopter();
         String name;
+        name=nameAdopter();
+        adopter.setName(name);
+
         name=nameAnimal();
         animal.setName(name);
+
         boolean animalIsOk = true;
         int roundsNumber = 1;
         while (animalIsOk == true && roundsNumber <=7) {
@@ -127,7 +130,7 @@ public class Game {
 
     }
 
-    private String initAdopter(){
+    private String nameAdopter(){
         System.out.println("Please enter your name.");
         String name;
         Scanner scanner=new Scanner(System.in);
@@ -136,7 +139,7 @@ public class Game {
             return name;
         else{
             System.out.println("Please enter a valid name!");
-            return initAdopter();
+            return nameAdopter();
         }
 
     }
